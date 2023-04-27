@@ -9,6 +9,7 @@ import 'package:http/http.dart' as http;
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:zonguldak_kent_rehberi/custom_widgets/error_window.dart';
 import 'package:zonguldak_kent_rehberi/response/nearby_places_response.dart';
+import 'package:zonguldak_kent_rehberi/screens/settings.dart';
 import 'package:zonguldak_kent_rehberi/screens/transportation_card.dart';
 import '../config.dart';
 import '../custom_widgets/place_info_window.dart';
@@ -466,7 +467,7 @@ class _HomePageState extends State<HomePage> {
                   color: Colors.white,
                 ),
                 Text(
-                  "City Guide",
+                  "Zonguldak Rehberi",
                   style: TextStyle(
                       color: Colors.white,
                       fontSize: 30,
@@ -524,8 +525,8 @@ class _HomePageState extends State<HomePage> {
             leading: const Icon(Icons.settings),
             title: Text(AppLocalizations.of(context).settings),
             onTap: () {
-              Navigator.pop(context);
-              showErrorWindow(context);
+              Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => const SettingsPage2()));
             },
           ),
           ListTile(
@@ -550,13 +551,13 @@ class _HomePageState extends State<HomePage> {
             onTap: () {
               showAboutDialog(
                   context: context,
-                  applicationName: "City Guide",
+                  applicationName: "Zonguldak Kent Rehberi",
                   applicationVersion: "0.1.0",
                   applicationIcon: const Icon(Icons.location_city),
-                  applicationLegalese: "© 2021 City Guide",
+                  applicationLegalese: "© 2023 Zonguldak Rehberi",
                   children: [
                     const Text(
-                        "City Guide is an application that helps you find places in your city. It also provides you with information about the weather, news, events and tips. It is a very useful application for tourists and locals alike."),
+                        "Zonguldak Kent Rehberi, şehrinizdeki yerleri bulmanıza yardımcı olan bir uygulamadır. Ayrıca size hava durumu, haberler, etkinlikler ve ipuçları hakkında bilgi verir. Hem turistler hem de yerli halk için çok faydalı bir uygulamadır.."),
                   ]);
             },
           ),
