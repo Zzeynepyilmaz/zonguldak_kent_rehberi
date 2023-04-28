@@ -16,7 +16,7 @@ class _SettingsPage2State extends State<SettingsPage2> {
       data: _isDark ? ThemeData.dark() : ThemeData.light(),
       child: Scaffold(
         appBar: AppBar(
-          title: const Text("Settings"),
+          title: const Text("Ayarlar"),
         ),
         body: Center(
           child: Container(
@@ -27,7 +27,7 @@ class _SettingsPage2State extends State<SettingsPage2> {
                   title: "General",
                   children: [
                     _CustomListTile(
-                        title: "Dark Mode",
+                        title: "Gece Modu",
                         icon: Icons.dark_mode_outlined,
                         trailing: Switch(
                             value: _isDark,
@@ -37,10 +37,10 @@ class _SettingsPage2State extends State<SettingsPage2> {
                               });
                             })),
                     const _CustomListTile(
-                        title: "Notifications",
+                        title: "Bildirimler",
                         icon: Icons.notifications_none_rounded),
                     const _CustomListTile(
-                        title: "Security Status",
+                        title: "Güvenlik Durumu",
                         icon: CupertinoIcons.lock_shield),
                   ],
                 ),
@@ -49,15 +49,14 @@ class _SettingsPage2State extends State<SettingsPage2> {
                   title: "Organization",
                   children: [
                     _CustomListTile(
-                        title: "Profile", icon: Icons.person_outline_rounded),
+                        title: "Profil", icon: Icons.person_outline_rounded),
                     _CustomListTile(
-                        title: "Messaging", icon: Icons.message_outlined),
+                        title: "Mesajlar", icon: Icons.message_outlined),
+                    _CustomListTile(title: "Arama", icon: Icons.phone_outlined),
                     _CustomListTile(
-                        title: "Calling", icon: Icons.phone_outlined),
+                        title: "Kişiler", icon: Icons.contacts_outlined),
                     _CustomListTile(
-                        title: "People", icon: Icons.contacts_outlined),
-                    _CustomListTile(
-                        title: "Calendar", icon: Icons.calendar_today_rounded)
+                        title: "Takvim", icon: Icons.calendar_today_rounded)
                   ],
                 ),
                 const Divider(),

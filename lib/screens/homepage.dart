@@ -11,6 +11,7 @@ import 'package:zonguldak_kent_rehberi/custom_widgets/error_window.dart';
 import 'package:zonguldak_kent_rehberi/response/nearby_places_response.dart';
 import 'package:zonguldak_kent_rehberi/screens/settings.dart';
 import 'package:zonguldak_kent_rehberi/screens/transportation_card.dart';
+import 'package:zonguldak_kent_rehberi/screens/feed.dart';
 import '../config.dart';
 import '../custom_widgets/place_info_window.dart';
 
@@ -32,6 +33,7 @@ NearbyPlacesResponse nearbyPlacesResponse =
     NearbyPlacesResponse(results: [], status: '');
 
 class HomePage extends StatefulWidget {
+  static const String route = '/homepage';
   const HomePage({Key? key}) : super(key: key);
 
   @override
@@ -499,8 +501,8 @@ class _HomePageState extends State<HomePage> {
             leading: const Icon(Icons.event),
             title: Text(AppLocalizations.of(context).events),
             onTap: () {
-              Navigator.pop(context);
-              showErrorWindow(context);
+              Navigator.of(context)
+                  .push(MaterialPageRoute(builder: (context) => Feed()));
             },
           ),
           //tips

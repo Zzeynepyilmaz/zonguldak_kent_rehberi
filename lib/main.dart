@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:zonguldak_kent_rehberi/screens/homepage.dart';
+import 'package:zonguldak_kent_rehberi/screens/login.dart';
 
 void main() {
   runApp(
@@ -25,12 +26,16 @@ class _MyAppState extends State<MyApp> {
       useInheritedMediaQuery: true,
       // on below line we are hiding debug banner
       debugShowCheckedModeBanner: false,
+      initialRoute: "/",
+      routes: {
+        "/homepage": (context) => const HomePage(),
+      },
       theme: ThemeData(
         // on below line we are specifying theme
         primarySwatch: Colors.red,
       ),
       // First screen of our app
-      home: const HomePage(),
+      home: const Login(),
     );
   }
 }
