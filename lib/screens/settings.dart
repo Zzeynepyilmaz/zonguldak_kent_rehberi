@@ -17,6 +17,7 @@ class _SettingsPage2State extends State<SettingsPage2> {
       child: Scaffold(
         appBar: AppBar(
           title: const Text("Ayarlar"),
+          backgroundColor: Colors.red,
         ),
         body: Center(
           child: Container(
